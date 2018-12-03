@@ -1912,7 +1912,7 @@
                   // This behavior can be disabled by the [`steppable`](#steppable-Option) option.
                   //
                   'up.steppable': function(e, ev){
-                    if (panned || wheeled) return;
+                    if (panned || wheeled || !opt.steppable) return;
                     t.trigger(get(_clicked_location_).x - t.offset().left > 0.5 * get(_width_) ? 'stepRight' : 'stepLeft')
                   },
                   'stepLeft stepRight': function(e){
